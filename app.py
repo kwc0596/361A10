@@ -21,14 +21,13 @@ def preload_quotes():
 
     print("Loading")
     for x in range(15):
-        random_quote = requests.get(api).json()
-        content = random_quote["content"]
-        author = random_quote["author"]
-        quote = content + "\n\n" + "By " + author
-        quoteinfo.append(str(author))
-        print(content)
-
-        quotes.append(quote)
+        random_quote=requests.get(api). json()
+        content=random_quote ["content"]
+        author=random_quote ["author"]
+        quote=content+"\n\n"+"By "+author
+        quoteinfo.append (str(author))
+        print (content)
+        quotes.append (quote)
     print("Loading is finished.")
 
 preload_quotes()
