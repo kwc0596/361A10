@@ -11,10 +11,9 @@ quote_number=zero
 
 window=tk.Tk()
 window.geometry ("1000x400")
-window.title("Random Quote Generator")
-window.grid_columnconfigure(0, weight = 1)
-#window.resizable(False, False)
-window.configure(bg="black")
+window.title ("Random Quote Generator")
+window.grid_columnconfigure (0, weight = 1)
+window.configure (bg="black")
 
 def preload_quotes():
     global quotes
@@ -30,23 +29,24 @@ def preload_quotes():
         quotes.append (quote)
     print("Loading is finished.")
 
-preload_quotes()
+preload_quotes ()
 
-def get_random_quote():
+def get_random_quote ():
     global quote_label
     global quote_wiki
     global quotes
     global quote_number
+    
 
-    quote_label.configure(text=quotes[quote_number])
-    info = wiki_query(quoteinfo[quote_number])
-    quote_wiki.configure(text=info)
+    quote_label.configure (text = quotes[quote_number])
+    info = wiki_query( quoteinfo [quote_number] )
+    quote_wiki.configure (text = info)
     quote_number = quote_number + 1
-    print(quote_number)
+    print (quote_number)
 
-    if quotes[quote_number] == quotes[-3]:
-        thread = Thread(target=preload_quotes)
-        thread.start()
+    if quotes[quote_number]==quotes[-3]:
+        thread = Thread (target = preload_quotes)
+        thread.start ()
 
 
 
@@ -67,5 +67,5 @@ button.grid(row=1, column=0, stick="WE", padx=20, pady=10)
 
 #Execute the program
 
-if __name__ == "__main__":
+if __name__=="__main__" :
     window.mainloop()
